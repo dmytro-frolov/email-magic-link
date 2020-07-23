@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  django:
+    env_file:
+      - django_server.env
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "7000:8000"
+
+
