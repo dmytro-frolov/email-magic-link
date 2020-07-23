@@ -12,5 +12,5 @@ COPY . .
 USER user
 #RUN python manage.py collectstatic --no-input
 # ENTRYPOINT python manage.py migrate && uwsgi --ini uwsgi.ini
-#ENTRYPOINT python manage.py makemigrations && python manage.py migrate && uwsgi --ini uwsgi.ini
-ENTRYPOINT uwsgi --ini uwsgi.ini
+ENTRYPOINT python manage.py makemigrations && python manage.py migrate && uwsgi --ini uwsgi.ini
+#ENTRYPOINT uwsgi --ini uwsgi.ini
